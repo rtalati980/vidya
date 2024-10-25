@@ -1,0 +1,216 @@
+
+.header-main{
+    display: flex; 
+    background-color: #fef8f8;
+  
+    }
+    
+    .second img{
+      margin-left: 40px;
+      margin-top: 5px;
+      max-width: 50% !important;
+    }
+    .logo{
+        position: relative;
+        width: 100px;
+        padding: 0px;
+    
+    }
+    
+    .logo img{
+        max-width: 80%;
+        padding: 0px;
+    }
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items:flex-start;
+    padding: 10px;
+  }
+  .dropbtn {
+    font-family: "Vesta Pro Bold";
+    color: var(--secondry-text-color);
+    padding: 5px 13px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background-color: #fef8f8;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+   
+    z-index: 1;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown:hover .dropbtn {
+  color: var(--primary-text-color);
+  }
+  
+  .banner {
+    text-align: center;
+   background-color: var(--primary-text-color);
+    font-size: 10px;
+    color: white;
+    padding: 5px ;
+  }
+  
+  .nav-tex .fa{
+
+    display: inline-block;
+  }
+
+  .bannerText{
+        font-size: 20px;
+  }
+  .highlight {
+  
+    transition: background-color 0.5s ease-in-out;
+  }
+  .fas{
+    display: block !important;
+  }
+  
+
+  /* General Header Styling */
+  .header-main {
+    position: fixed; /* Fixed position for the main header */
+    top: 0; /* Stick to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    display: flex; /* Flex display for main header */
+    justify-content: space-between; /* Space between elements */
+    align-items: center; /* Center items vertically */
+    width: 100%; /* Full width */
+    z-index: 99; /* Layer above other elements */
+    background-color: #fef8f8; /* Background color */
+    transition: top 0.3s; /* Smooth transition for showing/hiding */
+  }
+
+.header-main .logo {
+  flex: 1;
+}
+
+.header-main .logo img {
+  max-width: 150px;
+}
+
+.header-main .navbar {
+  display: flex;
+  align-items: center;
+}
+
+.header-main .navbar ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-main .navbar ul li {
+  margin-left: 20px;
+}
+
+.header-main .navbar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Hamburger icon styling */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header-main {
+      flex-direction: row;
+      padding: 10px;
+  }
+
+  .navbar {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 250px;
+      background-color: #333;
+      z-index: 1000;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 60px;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+  }
+
+  .navbar.active {
+      display: flex;
+      transform: translateX(0);
+  }
+
+  .hamburger {
+      display: block;
+      font-size: 30px;
+      cursor: pointer;
+      color: #333;
+      z-index: 1001;
+  }
+
+  .navbar ul {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .navbar ul li {
+      width: 100%;
+      margin: 20px 0;
+  }
+
+  .navbar ul li a {
+      font-size: 1.2rem;
+      color: white;
+      padding: 10px 20px;
+      display: block;
+  }
+
+  .logo img {
+      max-width: 80px;
+  }
+
+  .logo.second {
+      display: none;
+  }
+}
+
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+  margin-bottom: 0 !important;
+}
+
+h1{
+  font-size: 1.5rem !important;
+}
+
+

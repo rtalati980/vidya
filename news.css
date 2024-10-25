@@ -1,0 +1,274 @@
+/* Newsletter Section */
+.newsletter-section {
+    padding: 50px;
+    background-color: #f9f9f9;
+}
+
+.newsletter-carousel {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Individual Newsletter Box */
+.newsletter-box {
+    width: 23%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.newsletter-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image and Overlay Styling */
+.newsletter-image-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.newsletter-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-bottom: 3px solid #f0a500;
+}
+
+.newsletter-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.newsletter-date {
+    font-size: 0.9rem;
+}
+
+/* Content Inside the Newsletter Box */
+.newsletter-content {
+    padding: 20px;
+}
+
+.newsletter-content h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.newsletter-content p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+
+.newsletter-box {
+    width: 23%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Add this */
+}
+
+.read-more-btn {
+    display: inline-block;
+    color: black;
+    padding: 10px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    position: absolute;
+    left: 50%;
+    bottom: -15px; /* Moves half outside the card */
+    transform: translateX(-50%);
+    z-index: 99;
+}
+
+.read-more-btn:hover {
+    color: #fff;
+    background-color: var(--secondry-text-color);
+}
+/* Responsive Styling */
+@media (max-width: 1024px) {
+    .newsletter-box {
+        width: 48%;
+    }
+}
+
+@media (max-width: 768px) {
+    .newsletter-box {
+        width: 100%;
+    }
+}
+
+
+/* Teachers Section */
+/* Teachers Section */
+.teachers-carousel-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    background-color: #f4f4f9;
+    padding: 40px 0;
+}
+
+.teachers-carousel {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Teacher Card */
+.teacher-card {
+    min-width: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Image */
+.teacher-image {
+    width: 100%;
+    object-fit: contain;
+    padding: 20px;
+}
+
+.teacher-info {
+    padding: 20px;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-btn:hover {
+    opacity: 1;
+}
+
+#prev-btn {
+    left: 10px;
+}
+
+#next-btn {
+    right: 10px;
+}
+
+/* Responsive for Smaller Screens */
+@media (max-width: 768px) {
+    .teacher-card {
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .teacher-card {
+        min-width: 150px;
+    }
+}
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.card {
+  width: 24rem;
+  height: 36rem;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  color: rgb(240, 240, 240);
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+ 
+  img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    transition: opacity .2s ease-out;
+  }
+
+  h2 {
+    position: absolute;
+    inset: auto auto 30px 30px;
+    margin: 0;
+    transition: inset .3s .3s ease-out;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+  
+  p, a {
+    position: absolute;
+    opacity: 0;
+    max-width: 80%;
+    transition: opacity .3s ease-out;
+  }
+  
+  p {
+    inset: auto auto 80px 30px;
+  }
+  
+  a {
+    inset: auto auto 40px 30px;
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  &:hover h2 {
+    inset: auto auto 220px 30px;
+    transition: inset .3s ease-out;
+  }
+  
+  &:hover p, &:hover a {
+    opacity: 1;
+    transition: opacity .5s .1s ease-in;
+  }
+  
+  &:hover img {
+    transition: opacity .3s ease-in;
+    opacity: 1;
+  }
+
+}
+
+.material-symbols-outlined {
+  vertical-align: middle;
+}

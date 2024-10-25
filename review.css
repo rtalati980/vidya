@@ -1,0 +1,88 @@
+.review-carousel {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carousel-container-scroll {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.review {
+  min-width: 100%; /* Show 1 review on mobile */
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+}
+
+.review img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.carousel-btn.left-arr {
+  left: 10px;
+}
+
+.carousel-btn.right-arr {
+  right: 10px;
+}
+
+/* Side navigation */
+#mySidenav a {
+  position: fixed;
+  left: -80px;
+  transition: 0.3s;
+  padding: 10px;
+  width: 120px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  z-index: 99;
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#facebook { top: 20px; background-color: #3b5998; }
+#twitter { top: 80px; background-color: #1da1f2; }
+#linkedin { top: 140px; background-color: #0077b5; }
+#instagram { top: 200px; background-color: #e4405f; }
+
+#mySidenav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 768px) {
+  .review {
+    min-width: 100%; /* Show 1 review on mobile */
+  }
+
+  .review-carousel {
+    max-width: 100%; /* Ensure the container fits on small screens */
+  }
+
+  .review img {
+    width: 120px; /* Smaller image on mobile */
+  }
+}

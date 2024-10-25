@@ -1,0 +1,73 @@
+.brand-logos {
+    padding: 20px;
+    text-align: center;
+}
+
+.logo-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    justify-content: space-between;
+    scroll-behavior: smooth;
+}
+
+.logo-container a {
+    min-width: 25%;
+    flex: 1 0 auto;
+}
+
+.logo-container img {
+    width: 100%;
+    width: 150px;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
+    .logo-container {
+        justify-content: space-around;
+    }
+    
+    .logo-container a {
+        min-width: 33.33%; /* 3 logos visible on mobile */
+    }
+}
+
+
+.news-ticker {
+  width: 100%;
+  background-color: #0077b6;
+  color: #fff;
+  padding: 10px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.ticker-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  white-space: nowrap;
+  animation: scroll 15s linear infinite;
+}
+
+.ticker-content span {
+  padding: 0 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+/* Optional: Responsive styling */
+@media (max-width: 768px) {
+  .ticker-content span {
+      font-size: 1rem;
+  }
+}
