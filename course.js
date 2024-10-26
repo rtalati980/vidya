@@ -132,6 +132,7 @@ const courseWrapper12 = document.getElementById('courseWrapper12');
 const courseWrapper13 = document.getElementById('courseWrapper13');
 const courseWrapper14 = document.getElementById('courseWrapper14');
 
+// Dynamically generate course cards
 function createCourseCards(courses, wrapper) {
     wrapper.innerHTML = ''; // Clear existing content
     courses.forEach(course => {
@@ -142,7 +143,7 @@ function createCourseCards(courses, wrapper) {
             <h3>${course.title}</h3>
             <p>Duration: ${course.duration} weeks</p>
             <p>Lessons: ${course.lessons}</p>
-            <p>Price:  ₹${course.price}</p>
+            <p>Price: ₹${course.discountedPrice} (₹${course.price})</p>
             <button class="know-more-btn">Know More</button>
             <button class="enroll-btn">Enroll</button>
         `;
@@ -150,6 +151,7 @@ function createCourseCards(courses, wrapper) {
     });
 }
 
+// Call the function to populate courses in Tab 1 and Tab 2
 createCourseCards(courses, courseWrapper1);
 createCourseCards(courses2, courseWrapper2);
 createCourseCards(courses3,courseWrapper3);
@@ -163,167 +165,113 @@ createCourseCards(courses11,courseWrapper11);
 createCourseCards(courses12,courseWrapper12);
 createCourseCards(courses13,courseWrapper13);
 createCourseCards(courses14,courseWrapper14);
-   
-document.addEventListener('DOMContentLoaded', () => {
-    let currentTab = 'tab-1'; // Default active tab
-    loadCourses(currentTab);
 
-    // Tab Switching Functionality
-    const tabs = document.querySelectorAll('.tabs li');
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            // Remove active class from all tabs and hide all contents
-            tabs.forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none');
+let currentPosition1 = 0;
+let currentPosition2 = 0;
+let currentPosition3 = 0;
+let currentPosition4 = 0;
+let currentPosition5 = 0;
+let currentPosition7 = 0;
+let currentPosition8 = 0;
+let currentPosition9 = 0;
+let currentPosition10 = 0;
+let currentPosition11 = 0;
+let currentPosition12 = 0;
+let currentPosition13 = 0;
+let currentPosition14 = 0;
+const totalCourses1 = courses.length;
+const totalCourses2 = courses2.length;
+const totalCourses3 = courses3.length;
+const totalCourses4 = courses4.length;
+const totalCourses5 = courses5.length;
+const totalCourses7 = courses7.length;
+const totalCourses8 = courses8.length;
+const totalCourses9 = courses9.length;
+const totalCourses10 = courses10.length;
+const totalCourses11 = courses11.length;
+const totalCourses12 = courses12.length;
+const totalCourses13 = courses13.length;
+const totalCourses14 = courses14.length;
 
-            // Add active class to the clicked tab and show the associated content
-            this.classList.add('active');
-            currentTab = this.getAttribute('data-tab');
-            document.getElementById(currentTab).style.display = 'block';
 
-            // Load courses dynamically based on the active tab
-            loadCourses(currentTab);
-        });
+const visibleCourses = 4; // Number of visible courses at a time
+
+// Function to update the course carousel position
+// Tabs switching functionality
+createCourseCards(courses, courseWrapper1);
+createCourseCards(courses2, courseWrapper2);
+
+let currentPosition112 = 0;
+let currentPosition21 = 0;
+const totalCourses111 = courses.length;
+//const totalCourses2 = courses2.length;
+//const visibleCourses = 4; // Number of visible courses at a time
+
+// Function to update the course carousel position
+function updateCourseCarousel(wrapper, currentPosition) {
+    const newPosition = -(currentPosition * 100 / visibleCourses);
+    wrapper.style.transform = `translateX(${newPosition}%)`;
+}
+
+// Left arrow click event for Tab 1
+document.getElementById('prevBtn1').addEventListener('click', () => {
+    currentPosition112 = (currentPosition112 === 0) ? totalCourses111 - visibleCourses : currentPosition112 - 1;
+    updateCourseCarousel(courseWrapper1, currentPosition112);
+});
+
+// Right arrow click event for Tab 1
+document.getElementById('nextBtn1').addEventListener('click', () => {
+    currentPosition112 = (currentPosition112 === totalCourses111 - visibleCourses) ? 0 : currentPosition112 + 1;
+    updateCourseCarousel(courseWrapper1, currentPosition112);
+});
+
+// Left arrow click event for Tab 2
+document.getElementById('prevBtn2').addEventListener('click', () => {
+    currentPosition2 = (currentPosition2 === 0) ? totalCourses2 - visibleCourses : currentPosition2 - 1;
+    updateCourseCarousel(courseWrapper2, currentPosition2);
+});
+
+// Right arrow click event for Tab 2
+document.getElementById('nextBtn2').addEventListener('click', () => {
+    currentPosition2 = (currentPosition2 === totalCourses2 - visibleCourses) ? 0 : currentPosition2 + 1;
+    updateCourseCarousel(courseWrapper2, currentPosition2);
+});
+
+// Auto swipe for Tab 1
+function autoSwipeCourses1() {
+    currentPosition1 = (currentPosition1 === totalCourses1 - visibleCourses) ? 0 : currentPosition1 + 1;
+    updateCourseCarousel(courseWrapper1, currentPosition1);
+}
+
+// Auto swipe for Tab 2
+function autoSwipeCourses2() {
+    currentPosition2 = (currentPosition2 === totalCourses2 - visibleCourses) ? 0 : currentPosition2 + 1;
+    updateCourseCarousel(courseWrapper2, currentPosition2);
+}
+
+// Auto swipe interval every 5 seconds for both tabs
+setInterval(autoSwipeCourses1, 5000);
+setInterval(autoSwipeCourses2, 5000);
+
+// Tabs switching functionality
+const tabs = document.querySelectorAll('.tabs li');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+        // Remove 'active' class from all tabs
+        tabs.forEach(t => t.classList.remove('active'));
+        // Add 'active' class to the clicked tab
+        this.classList.add('active');
+        
+        // Hide all tab contents
+        tabContents.forEach(content => content.style.display = 'none');
+        
+        // Show the associated tab content
+        const tabId = this.getAttribute('data-tab');
+        document.getElementById(tabId).style.display = 'block';
     });
+});
 
-    // Carousel Functionality
-  let currentIndex = 0; // Initial course index
-
-    function loadCourses(tabId) {
-        const courseWrapper = document.getElementById(`courseWrapper${tabId === 'tab-1' ? '1' : '2'}`);
-        courseWrapper.innerHTML = ''; // Clear previous courses
-
-        // Dynamically add course cards
-        coursesData[tabId].forEach(course => {
-            const courseCard = document.createElement('div');
-            courseCard.classList.add('course-card');
-            courseCard.innerHTML = `
-                <img src="${course.image}" alt="${course.title}">
-                <h3>${course.title}</h3>
-                <p>Duration: ${course.duration} weeks</p>
-                <p>Credits: ${course.credits}</p>
-                <p>Price: ₹${course.discountedPrice} <del>₹${course.price}</del></p>
-                <button class="know-more-btn">Know More</button>
-                <button class="enroll-btn">Enroll</button>
-            `;
-            courseWrapper.appendChild(courseCard);
-        });
-
-//         const courses = document.querySelectorAll(`#${tabId} .course-card`);
-//         const prevBtn = document.getElementById(`prevBtn${tabId === 'tab-1' ? '1' : '2'}`);
-//         const nextBtn = document.getElementById(`nextBtn${tabId === 'tab-1' ? '1' : '2'}`);
-
-//         // Reset index and setup carousel for the current tab
-//         index1 = 0;
-//         showCourses(courses, index1);
-
-//         prevBtn.addEventListener('click', () => {
-//             index1 = (index1 > 0) ? index1 - 1 : courses.length - 1;
-//             showCourses(courses, index1);
-//         });
-
-//         nextBtn.addEventListener('click', () => {
-//             index1 = (index1 < courses.length - 1) ? index1 + 1 : 0;
-//             showCourses(courses, index1);
-//         });
-//     }
-
-//     // Show courses based on the current index (only showing one card at a time)
-//     function showCourses(courseCards, index1) {
-//         courseCards.forEach((course, i) => {
-//             course.style.display = (i === index1) ? 'block' : 'none';
-//         });
-//     }
-
-//     // Initialize the first tab's course display
-//     loadCourses('tab-1');
-// });
-
-
-
-//     document.addEventListener('DOMContentLoaded', () => {
-//         // Tab switching logic
-//         const tabs = document.querySelectorAll('.tabs li');
-//         const tabContents = document.querySelectorAll('.tab-content');
-    
-//         tabs.forEach(tab => {
-//             tab.addEventListener('click', () => {
-//                 tabs.forEach(t => t.classList.remove('active')); // Remove 'active' class from all tabs
-//                 tab.classList.add('active'); // Add 'active' class to the clicked tab
-    
-//                 const target = tab.getAttribute('data-tab'); // Get the target tab content
-    
-//                 // Show the selected tab content and hide others
-//                 tabContents.forEach(content => {
-//                     content.style.display = content.id === target ? 'block' : 'none';
-//                 });
-//             });
-//         });
-    
-    //     // Carousel logic
-    //     const carousels = [
-    //         { wrapperId: 'courseWrapper1', prevBtnId: 'prevBtn1', nextBtnId: 'nextBtn1' },
-    //         { wrapperId: 'courseWrapper2', prevBtnId: 'prevBtn2', nextBtnId: 'nextBtn2' }
-    //     ];
-    
-    //     carousels.forEach(({ wrapperId, prevBtnId, nextBtnId }) => {
-    //         const courseWrapper = document.getElementById(wrapperId);
-    //         const prevBtn = document.getElementById(prevBtnId);
-    //         const nextBtn = document.getElementById(nextBtnId);
-    
-    //         let scrollPosition = 0;
-    
-    //         // Calculate how much to scroll (width of one course card)
-    //         const cardWidth = courseWrapper.querySelector('div').offsetWidth;
-    //         const visibleCards = Math.floor(courseWrapper.offsetWidth / cardWidth); // Calculate how many cards are visible at once
-    //         const scrollAmount = cardWidth * visibleCards; // Scroll by the width of visible cards
-    
-    //         // Left arrow click event
-    //         prevBtn.addEventListener('click', () => {
-    //             scrollPosition -= scrollAmount; // Move left by calculated scroll amount
-    //             if (scrollPosition < 0) {
-    //                 scrollPosition = 0; // Prevent scrolling beyond the start
-    //             }
-    //             courseWrapper.scrollTo({
-    //                 left: scrollPosition,
-    //                 behavior: 'smooth'
-    //             });
-    //         });
-    
-    //         // Right arrow click event
-    //         nextBtn.addEventListener('click', () => {
-    //             scrollPosition += scrollAmount; // Move right by calculated scroll amount
-    //             if (scrollPosition >= courseWrapper.scrollWidth - courseWrapper.offsetWidth) {
-    //                 scrollPosition = courseWrapper.scrollWidth - courseWrapper.offsetWidth; // Prevent overscrolling to the right
-    //             }
-    //             courseWrapper.scrollTo({
-    //                 left: scrollPosition,
-    //                 behavior: 'smooth'
-    //             });
-    //         });
-    //     });
-    // });
-    
-    // Carousel Function
-// function initCarousel(wrapperId, prevBtnId, nextBtnId) {
-//     const courseWrapper = document.getElementById(wrapperId);
-//     const prevBtn = document.getElementById(prevBtnId);
-//     const nextBtn = document.getElementById(nextBtnId);
-//     let scrollPosition = 0;
-//     const cardWidth = 300; // Assuming each course card is 300px wide
-//     const visibleCards = 4; // Number of cards visible at once
-//     const maxScroll = cardWidth * (courseWrapper.children.length - visibleCards);
-
-//     prevBtn.addEventListener("click", function () {
-//         scrollPosition = Math.max(scrollPosition - cardWidth, 0);
-//         courseWrapper.style.transform = `translateX(-${scrollPosition}px)`;
-//     });
-
-//     nextBtn.addEventListener("click", function () {
-//         scrollPosition = Math.min(scrollPosition + cardWidth, maxScroll);
-//         courseWrapper.style.transform = `translateX(-${scrollPosition}px)`;
-//     });
-// }
-
-
-
+// Initially display the first tab's content
+document.getElementById('tab1').style.display = 'block';
