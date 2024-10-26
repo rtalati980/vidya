@@ -319,3 +319,23 @@ form #bt:hover {
 .highlight-alt {
   color: #3498db; /* Color for "VidyaBridge" */
 }
+
+
+
+@media (max-width: 768px){
+
+  .hero-bann-content{
+    margin-top: 10%;
+  }
+  .text-content{
+    width: 80%;
+  }
+
+  .sub-heading {
+    width: 250px;
+    font-size: 1rem;
+} 
+  .form-container{
+    display: none !important;
+  }
+}
