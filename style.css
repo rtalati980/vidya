@@ -285,6 +285,12 @@ ol li .descr { font-size: 0.8rem; font-weight: 300 }
   }
 }
 
+
+@media screen and (max-width: 780px) {
+  .sm-box {
+  display: none;
+  }
+}
 .sm-box {
   top: 95px;
   width: 64px;

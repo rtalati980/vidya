@@ -29,6 +29,7 @@
     padding: 10px;
   }
   .dropbtn {
+
     font-family: "Vesta Pro Bold";
     color: var(--secondry-text-color);
     padding: 5px 13px;
@@ -151,7 +152,7 @@
 
   .navbar {
       display: none;
-      position: fixed;
+      position: relative;
       top: 0;
       left: 0;
       height: 100%;
@@ -166,10 +167,15 @@
   }
 
   .navbar.active {
-      display: flex;
+      position: inherit;
       transform: translateX(0);
   }
-
+ 
+  .dropbtn{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
   .hamburger {
       display: block;
       font-size: 30px;
@@ -213,4 +219,60 @@ h1{
   font-size: 1.5rem !important;
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    display: none !important;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 75%;
+      height: 100%;
+      flex-direction: column;
+      background-color: #333;
+      transition: right 0.3s;
+      padding-top: 60px;
+  }
 
+  .navbar.active {
+      right: 0;
+  }
+
+  .hamburger {
+      display: block;
+  }}
+
+
+
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
