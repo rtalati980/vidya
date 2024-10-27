@@ -1,4 +1,9 @@
 // Function to dynamically render the navbar
+// Slide-in effect on mobile
+
+  
+
+
 function createNavbar(menuItems) {
     const navbar = document.getElementById('navbar');
 
@@ -31,7 +36,7 @@ function createNavbar(menuItems) {
 }
 
 // Call the function to create the navbar on page load
-createNavbar(menuItems);
+
 
 const hamburger = document.getElementById('hamburger');
 const navbar = document.getElementById('navbar');

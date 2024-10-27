@@ -18,7 +18,7 @@
     }
     
     .logo img{
-        max-width: 80%;
+        max-width: 90%;
         padding: 0px;
     }
 
@@ -27,12 +27,13 @@
     justify-content: space-around;
     align-items:flex-start;
     padding: 10px;
+    margin-left: 70px;
   }
   .dropbtn {
 
     font-family: "Vesta Pro Bold";
     color: var(--secondry-text-color);
-    padding: 5px 13px;
+    padding: 5px 8px;
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -111,7 +112,7 @@
 }
 
 .header-main .logo img {
-  max-width: 150px;
+  max-width: 220px;
 }
 
 .header-main .navbar {

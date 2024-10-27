@@ -275,3 +275,10 @@ tabs.forEach(tab => {
 
 // Initially display the first tab's content
 document.getElementById('tab1').style.display = 'block';
+
+
+
+
+
+
+

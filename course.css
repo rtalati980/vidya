@@ -7,11 +7,10 @@
     justify-content: space-around;
     cursor: pointer;
     list-style-type: none;
-    padding: 0;
 }
 
 .tabs li {
-    padding: 10px 20px;
+    padding: 10px 12px;
     background-color: none;
     border-radius: 15px;
 }
@@ -26,373 +25,97 @@
     margin-top: 20px;
 }
 
-.carousel-container {
-    position: relative;
+
+.course-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
     overflow: hidden;
-    margin-bottom: 20px;
-}
-
-.course-wrapper {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.course-card {
-    flex: 0 0 23%; /* 4 cards on large screens */
-    margin: 0 1%;
-    padding: 20px;
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-}
-
-.course-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #f3f4f6, #fafafa);
-}
-
-.course-card img {
+    margin: 10px 0;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .course-img-top {
     width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.course-card:hover img {
-    transform: scale(1.05);
-}
-
-.course-card h3 {
-    margin-top: 15px;
-    font-size: 20px;
+    height: auto;
+  }
+  
+  .course-body {
+    padding: 15px;
+  }
+  
+  .course-title {
+    font-size: 1.25em;
     font-weight: bold;
-    color: #333;
-}
-
-.course-card p {
-    margin: 5px 0;
-    color: #555;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-/* Button container in a row */
-.course-card .button-row {
+  }
+  
+  .course-instructor, .course-description {
+    font-size: 0.9em;
+    color: #666;
+  }
+  
+  .course-details {
+    font-size: 0.85em;
     display: flex;
     justify-content: space-between;
-    margin-top: 15px;
-}
-
-.course-card .know-more-btn, .course-card .enroll-btn {
-    width: 48%;
-    font-size: 10px;
-    padding: 12px;
-    background-color: #fa5404;
-    color: white;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Button colors and hover effects */
-.course-card .know-more-btn:hover {
-    background-color: #d03d03;
-    box-shadow: 0 4px 8px rgba(240, 50, 50, 0.3);
-}
-
-.course-card .enroll-btn {
-    background-color: #0077b6;
-}
-
-.course-card .enroll-btn:hover {
-    background-color: #005f8c;
-    box-shadow: 0 4px 8px rgba(0, 100, 200, 0.3);
-}
-
-/* Unique price tag */
-.course-card::before {
-    content: "₹1234"; /* Adjust with dynamic value in JavaScript if needed */
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: #0077b6;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.course-card:hover::before {
-    background-color: #fa5404;
-}
-
-/* Button hover overlay effect */
-.course-card .know-more-btn::before, .course-card .enroll-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    font-size: 12px;
-    background: rgba(255, 255, 255, 0.2);
-    transition: all 0.4s ease;
-}
-
-.course-card .know-more-btn:hover::before, .course-card .enroll-btn:hover::before {
-    left: 0;
-}
-
-
-
-.left-arrow, .right-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.left-arrow {
-    left: 0;
-}
-
-.right-arrow {
-    right: 0;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-    .course-card {
-        flex: 0 0 48%; /* 2 cards will appear on tablet/mobile view */
-        margin: 0 1%;
-    }
-
-    .course-card img {
-        height: 120px; /* Reduce image height for smaller screens */
-    }
-
-    .course-card h3 {
-        font-size: 16px; /* Adjust font size for mobile */
-    }
-
-    .course-card p {
-        font-size: 14px; /* Adjust text size for mobile */
-    }
-
-    .left-arrow, .right-arrow {
-        font-size: 20px;
-        padding: 8px;
-    }
-}
-
-/* EXTRA SMALL SCREENS */
-@media (max-width: 480px) {
-    .course-card {
-        flex: 0 0 100%; /* 1 card will appear on extra small screens */
-        margin-bottom: 15px;
-    }
-}
-
-@media (max-width: 768px) {
-    .tabs {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
-/* Course Cards */
-.course-wrapper {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.course-card {
-    flex: 0 0 23%; /* 4 cards on large screens */
-    margin: 0 1%;
-    padding: 20px;
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-}
-
-.course-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #f3f4f6, #fafafa);
-}
-
-.course-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.course-card:hover img {
-    transform: scale(1.05);
-}
-
-.course-card h3 {
-    margin-top: 15px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-}
-
-.course-card p {
     margin: 5px 0;
-    color: #555;
-    font-size: 14px;
-    line-height: 1.5;
-}
+  }
+  
+  .course-price {
+    font-size: 1.2em;
+    color: #28a745;
+  }
+  
+ 
 
-/* Button container in a row */
-.course-card .button-row {
+  .btn-crd{
     display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-}
 
-.course-card .know-more-btn, .course-card .enroll-btn {
-    width: 48%;
-    font-size: 10px;
-    padding: 12px;
-    background-color: #fa5404;
-    color: white;
-    font-weight: bold;
-    border: none;
+  }
+  
+  .carousel-control-prev{
+     position: absolute;
+     left: -50px;
+     color: brown !important;
+  }
+
+  .carousel-control-next{
+    position: absolute;
+    right: -50px;
+    color: brown !important;
+  }
+  .enroll-btn {
     cursor: pointer;
-    border-radius: 8px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Button colors and hover effects */
-.course-card .know-more-btn:hover {
-    background-color: #d03d03;
-    box-shadow: 0 4px 8px rgba(240, 50, 50, 0.3);
-}
-
-.course-card .enroll-btn {
-    background-color: #0077b6;
-}
-
-.course-card .enroll-btn:hover {
-    background-color: #005f8c;
-    box-shadow: 0 4px 8px rgba(0, 100, 200, 0.3);
-}
-
-/* Unique price tag */
-.course-card::before {
-    content: "₹1234"; /* Adjust with dynamic value in JavaScript if needed */
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: #0077b6;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.course-card:hover::before {
-    background-color: #fa5404;
-}
-
-/* Button hover overlay effect */
-.course-card .know-more-btn::before, .course-card .enroll-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
+    color: #007bff !important;
     width: 100%;
-    height: 100%;
-    font-size: 12px;
-    background: rgba(255, 255, 255, 0.2);
-    transition: all 0.4s ease;
-}
-
-.course-card .know-more-btn:hover::before, .course-card .enroll-btn:hover::before {
-    left: 0;
-}
-
-/* Carousel Arrows */
-.left-arrow, .right-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
     padding: 10px;
-}
+    margin-top: 10px;
+   
+  }
 
-.left-arrow {
-    left: 0;
-}
+  .enroll-btn2{
+    cursor: pointer;
+    color: var(--primary-text-color) !important;
+    
+    border-left: 1px solid black !important;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    
+  }
+  
+  .carousel-control-prev, .carousel-control-next {
+    width: 5%;
+  }
+  
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    border-radius: 50%;
+    padding: 10px;
+  }
 
-.right-arrow {
-    right: 0;
-}
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .course-card {
-        flex: 0 0 48%; /* 2 cards on tablet/mobile view */
-        margin: 0 1%;
-    }
-
-    .course-card img {
-        height: 120px; /* Reduce image height for smaller screens */
-    }
-
-    .course-card h3 {
-        font-size: 16px; /* Adjust font size for mobile */
-    }
-
-    .course-card p {
-        font-size: 14px; /* Adjust text size for mobile */
-    }
-
-    .left-arrow, .right-arrow {
-        font-size: 20px;
-        padding: 8px;
+  @media (min-width: 992px) {
+    .container, .container-lg, .container-md, .container-sm {
+        max-width: 1080px !important;
     }
 }
-
-/* Extra Small Screens */
-@media (max-width: 480px) {
-    .course-card {
-        flex: 0 0 48%; /* 2 cards on extra small screens */
-        margin: 0 1%;
-    }
-}
-
-

@@ -1,40 +1,58 @@
 .brand-logos {
-    padding: 20px;
-    text-align: center;
+  padding: 20px;
+  text-align: center;
 }
 
 .logo-container {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    justify-content: space-between;
-    scroll-behavior: smooth;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  justify-content: space-between;
+  scroll-behavior: smooth;
 }
 
 .logo-container a {
-    min-width: 25%;
-    flex: 1 0 auto;
+  min-width: 20%;
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .logo-container img {
-    width: 100%;
-    width: 150px;
-    object-fit: contain;
+  width: 150px;
+  object-fit: contain;
+  animation: pop-sequence 10s ease-in-out infinite;
 }
 
-@media screen and (max-width: 768px) {
-    .logo-container {
-        justify-content: space-around;
-    }
-    
-    .logo-container a {
-        min-width: 33.33%; /* 3 logos visible on mobile */
-    }
+/* Keyframe for the pop sequence */
+@keyframes pop-sequence {
+  0%, 100% {
+      transform: scale(1); /* Normal size */
+  }
+  20%, 40% {
+      transform: scale(1.2); /* Pop effect on first logo */
+  }
+  60%, 80% {
+      transform: scale(1); /* Back to normal size */
+  }
+  40%, 60% {
+      transform: scale(1.2); /* Pop effect on second logo */
+  }
+  60%, 80% {
+      transform: scale(1); /* Back to normal size */
+  }
+}
+
+/* Optional: Responsive styling */
+@media (max-width: 768px) {
+  .logo-container a {
+      min-width: 33.33%; /* Adjusts for 3 logos on smaller screens */
+  }
 }
 
 
 .news-ticker {
-  width: 100%;
+  width: 100%f;
   background-color: #0077b6;
   color: #fff;
   padding: 10px 0;
