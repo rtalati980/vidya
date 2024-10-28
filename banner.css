@@ -342,3 +342,15 @@ form #bt:hover {
   }
 }
 
+
+
+@media (max-width: 768px) {
+
+  .heading{
+    font-size: 1.8rem !important;
+  }
+  .sub-heading{
+font-size: 0.8rem !important;
+ width: 380px;
+    max-width: 100% !important;
+  }}
