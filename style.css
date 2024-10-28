@@ -721,7 +721,7 @@ figure:hover img {
 
 .desktop_2 .above {
   display: flex;
-  justify-content: space-between;
+ justify-content: space-around;
 }
 
 .desktop_2 .bottom {
@@ -876,3 +876,8 @@ figure:hover img {
   }
 }
 
+
+.secon-cont{
+  padding: 0 80px;
+
+}
