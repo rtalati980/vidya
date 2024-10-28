@@ -459,7 +459,7 @@ figure:hover img {
 .hero-banner {
   margin-top: 20px;
   position: relative;
-  background: url("/asset/imgban2.png") center/cover no-repeat;
+  background: url('/asset/imgban2.png') center/cover no-repeat;
   height: 100vh;
   display: flex;
   align-items: center;
