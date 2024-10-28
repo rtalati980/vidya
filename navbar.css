@@ -4,6 +4,10 @@
     background-color: #fef8f8;
   
     }
+    .second{
+      display:flex ;
+      justify-content: end;
+    }
     
     .second img{
       margin-left: 40px;
