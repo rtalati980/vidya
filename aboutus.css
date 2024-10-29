@@ -36,6 +36,10 @@
   
   /* Responsive styling */
   @media (max-width: 768px) {
+
+    .about-text{
+      padding: none;
+    }
     .about-section {
       flex-direction: column;
       text-align: center;
