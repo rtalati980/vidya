@@ -228,9 +228,7 @@
       display: block;
   }
 
-  .logo img {
-      max-width: 120px !important;
-  }
+
 
   .logo.second {
       display: none;
