@@ -112,7 +112,10 @@ form button:hover {
   .hero-bann {
     flex-direction: column;
   }
-
+  .text-content {
+  
+    padding: 0 0px; /* Takes half of the space */
+  }
   .hero-bann-content {
     max-width: 100%;
     text-align: center;
@@ -125,12 +128,7 @@ form button:hover {
 }
 
 @media (max-width: 480px) {
-  .heading {
-      font-size: 2rem;
-  }
-  .sub-heading {
-      font-size: 1rem;
-  }
+  
 }
 
 
@@ -305,9 +303,7 @@ form #bt:hover {
 
 @media (max-width: 768px){
 
-  .hero-bann-content{
-    margin-top: 10%;
-  }
+
   .text-content{
     width: 80%;
   }
@@ -351,6 +347,6 @@ form #bt:hover {
   }
   .sub-heading{
 font-size: 0.8rem !important;
- width: 380px;
+
     max-width: 100% !important;
   }}

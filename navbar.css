@@ -173,12 +173,10 @@
       padding: 10px;
   }
 
-  .header-main .logo{
-    width: 150px;    
-  }
+
 
   .navbar {
-      display: none;
+      display: flex;
       position: relative;
       top: 0;
       left: 0;
