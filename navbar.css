@@ -164,8 +164,8 @@
       padding: 10px;
   }
 
-  .header-main {
-    
+  .header-main .logo{
+    width: 150px;    
   }
 
   .navbar {
@@ -220,7 +220,7 @@
   }
 
   .logo img {
-      max-width: 80px !important;
+      max-width: 120px !important;
   }
 
   .logo.second {
