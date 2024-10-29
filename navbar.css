@@ -159,6 +159,15 @@
 
 /* Responsive styles */
 @media (max-width: 768px) {
+
+  .custom-header .logo{
+  flex: 0.5;
+
+}
+
+.custom-header .hamburger{
+  flex: 0.5;
+}
   .header-main {
       flex-direction: row;
       padding: 10px;
@@ -226,6 +235,10 @@
   .logo.second {
       display: none;
   }
+}
+
+@media(max-width: 480px) {
+  
 }
 
 
