@@ -459,7 +459,7 @@ figure:hover img {
 .hero-banner {
   margin-top: 20px;
   position: relative;
-  background: url('/asset/imgban2.png') center/cover no-repeat;
+  background: url('./asset/imgban2.png') center/cover no-repeat;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -769,7 +769,7 @@ figure:hover img {
   }
 
   .desktop_2 .project-first {
-    width: 450px;
+    width: auto px;
   }
 
   .desktop_2 .above {
@@ -832,8 +832,7 @@ figure:hover img {
 
 @media (max-width: 500px) {
   .desktop_2 .bigImg {
-    width: 250px;
-    height: 200px;
+    
   }
 
   .desktop_2 .project {
@@ -877,7 +876,7 @@ figure:hover img {
   }
 
   .desktop_2 .project-first {
-    width: 250px;
+    width: 350px;
   }
 
   .desktop_2 .overlay-inner {
